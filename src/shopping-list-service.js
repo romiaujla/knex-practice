@@ -20,12 +20,12 @@ const ShoppingListServices = {
             .returning('*')
             .then(rows => rows[0]);
     },
-    updateItem(db, item, itemId){
+    updateItem(db, id, newItem){
         return db(DB_TABLE)
             .where({ id })
-            .update(newItemFields);
+            .update(newItem);
     },
-    deleteItem(db, itemId){
+    deleteItem(db, id){
         return db
             .from(DB_TABLE)
             .where({ id })
